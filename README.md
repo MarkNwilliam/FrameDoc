@@ -196,7 +196,6 @@ For issues and questions:
 
 - Built with [Chrome Built-in AI APIs](https://developer.chrome.com/docs/ai/built-in)
 - Powered by [Gemini Nano](https://deepmind.google/technologies/gemini/nano/)
-- Video rendering with [Manim](https://www.manim.community/)
 
 ---
 
