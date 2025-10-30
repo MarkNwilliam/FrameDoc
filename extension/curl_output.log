@@ -1,0 +1,68 @@
+Note: Unnecessary use of -X or --request, POST is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 20.55.73.40:443...
+* Connected to yeeplatform.top (20.55.73.40) port 443 (#0)
+* ALPN: offers h2
+* ALPN: offers http/1.1
+*  CAfile: /etc/ssl/cert.pem
+*  CApath: none
+* (304) (OUT), TLS handshake, Client hello (1):
+} [320 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [19 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2066 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [78 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=yeeplatform.top
+*  start date: Sep  7 21:25:03 2025 GMT
+*  expire date: Dec  6 21:25:02 2025 GMT
+*  subjectAltName: host "yeeplatform.top" matched cert's "yeeplatform.top"
+*  issuer: C=US; O=Let's Encrypt; CN=E7
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multiplexing
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* h2h3 [:method: POST]
+* h2h3 [:path: /generate_video_json]
+* h2h3 [:scheme: https]
+* h2h3 [:authority: yeeplatform.top]
+* h2h3 [user-agent: curl/7.85.0]
+* h2h3 [accept: */*]
+* h2h3 [content-type: application/json]
+* h2h3 [content-length: 2127]
+* Using Stream ID: 1 (easy handle 0x133811600)
+> POST /generate_video_json HTTP/2
+> Host: yeeplatform.top
+> user-agent: curl/7.85.0
+> accept: */*
+> content-type: application/json
+> content-length: 2127
+> 
+} [2127 bytes data]
+* We are completely uploaded and fine
+* Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
+100  2127    0     0  100  2127      0   1207  0:00:01  0:00:01 --:--:--  1209100  2127    0     0  100  2127      0    769  0:00:02  0:00:02 --:--:--   770100  2127    0     0  100  2127      0    565  0:00:03  0:00:03 --:--:--   565100  2127    0     0  100  2127      0    446  0:00:04  0:00:04 --:--:--   446100  2127    0     0  100  2127      0    368  0:00:05  0:00:05 --:--:--   368100  2127    0     0  100  2127      0    314  0:00:06  0:00:06 --:--:--     0100  2127    0     0  100  2127      0    273  0:00:07  0:00:07 --:--:--     0100  2127    0     0  100  2127      0    242  0:00:08  0:00:08 --:--:--     0< HTTP/2 200 
+< server: nginx
+< date: Thu, 30 Oct 2025 16:31:52 GMT
+< content-type: application/json
+< content-length: 559
+< access-control-allow-origin: *
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=31536000
+< 
+{ [559 bytes data]
+100  2686  100   559  100  2127     57    217  0:00:09  0:00:09 --:--:--   111100  2686  100   559  100  2127     57    217  0:00:09  0:00:09 --:--:--   139
+* Connection #0 to host yeeplatform.top left intact
+{"file_size":1944843,"filename":"OAuth 2.0 Grant Types: Understanding the Different Flows_complete_final_9854.mp4","generation_time":"9.0s","message":"Direct JSON video generated successfully","processing_mode":"direct_json_parallel","scenes_processed":2,"status":"success","training_recorded":true,"video_path":"/home/yeeplatform/docvideomaker/media/OAuth 2.0 Grant Types: Understanding the Different Flows_complete_final_9854.mp4","video_url":"https://yeeplatform.top/media/OAuth 2.0 Grant Types: Understanding the Different Flows_complete_final_9854.mp4"}

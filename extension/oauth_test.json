@@ -1,0 +1,49 @@
+{
+  "output_name": "OAuth 2.0 Grant Types: Understanding the Different Flows",
+  "scenes": [
+    {
+      "type": "overview",
+      "text": "OAuth 2.0 is an authorization framework. It allows third-party apps to access your data without sharing your credentials. Think of it as a key to your digital life.",
+      "voiceover": "OAuth 2.0 is a standard protocol for authorization. It enables applications to access protected resources on behalf of a user without exposing the user's credentials.",
+      "creation_time": 10,
+      "duration": 4,
+      "subtitle": "A secure way to grant access to your resources."
+    },
+    {
+      "type": "process_diagram",
+      "voiceover": "OAuth 2.0 involves several steps. The user authenticates, grants authorization, and the application receives an access token. This process ensures secure access to protected resources.",
+      "diagram_data": {
+        "title": "OAuth 2.0 Flow Diagram",
+        "steps": [
+          {
+            "text": "User Authenticates",
+            "label": "User Authentication",
+            "voiceover": "The user logs in to their application."
+          },
+          {
+            "text": "Application Requests Authorization",
+            "label": "Authorization Request",
+            "voiceover": "The application requests authorization from the authorization server."
+          },
+          {
+            "text": "User Grants Authorization",
+            "label": "User Authorization",
+            "voiceover": "The user approves or denies the application's request."
+          },
+          {
+            "text": "Application Receives Access Token",
+            "label": "Access Token Issuance",
+            "voiceover": "The authorization server issues an access token to the application."
+          },
+          {
+            "text": "Application Uses Access Token",
+            "label": "Resource Access",
+            "voiceover": "The application uses the access token to access protected resources."
+          }
+        ]
+      },
+      "summary_voiceover": "OAuth 2.0 provides a secure and standardized way for applications to access user data with user consent.",
+      "duration": 12
+    }
+  ]
+}

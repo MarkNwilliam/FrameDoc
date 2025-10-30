@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame Docs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 420px;
+      min-height: 550px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo {
+      font-size: 40px;
+      margin-bottom: 8px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .content-info {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .info-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+
+    .info-value:last-child {
+      margin-bottom: 0;
+    }
+
+    .api-selector {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .api-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .api-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .api-option:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .api-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .api-option label {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 80px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: inherit;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+
+    .button-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .button-secondary:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.success {
+      background: rgba(72, 187, 120, 0.3);
+      border: 1px solid rgba(72, 187, 120, 0.5);
+    }
+
+    .status.error {
+      background: rgba(245, 101, 101, 0.3);
+      border: 1px solid rgba(245, 101, 101, 0.5);
+    }
+
+    .status.processing {
+      background: rgba(66, 153, 225, 0.3);
+      border: 1px solid rgba(66, 153, 225, 0.5);
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .video-result {
+      margin-top: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .video-result.show {
+      display: block;
+      animation: slideIn 0.3s ease;
+    }
+
+    .video-link {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+    }
+
+    .video-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🎬</div>
+      <h1>Frame Docs</h1>
+      <div class="subtitle">AI-Powered Documentation Videos</div>
+    </div>
+
+    <div class="content-info" id="contentInfo">
+      <div class="info-label">Current Page</div>
+      <div class="info-value" id="pageTitle">Loading...</div>
+      <div class="info-label">URL</div>
+      <div class="info-value" id="pageUrl" style="font-size: 11px; opacity: 0.8;">Loading...</div>
+    </div>
+
+    <div class="api-selector">
+      <label>AI APIS TO USE</label>
+      <div class="api-grid">
+        <div class="api-option">
+          <input type="checkbox" id="usePrompt" checked>
+          <label for="usePrompt">💭 Prompt</label>
+        </div>
+        <div class="api-option">
+          <input type="checkbox" id="useSummarizer" checked>
+          <label for="useSummarizer">📄 Summarizer</label>
+        </div>
+        <div class="api-option">
+          <input type="checkbox" id="useWriter">
+          <label for="useWriter">✏️ Writer</label>
+        </div>
+        <div class="api-option">
+          <input type="checkbox" id="useRewriter">
+          <label for="useRewriter">🖊️ Rewriter</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <label for="customDescription">Custom Instructions (Optional)</label>
+        <textarea 
+          id="customDescription" 
+          placeholder="Add specific instructions for your video... e.g., 'Focus on beginner concepts' or 'Include code examples'"
+        ></textarea>
+      </div>
+
+      <button id="generateBtn" class="button button-primary">
+        🎥 Generate Video
+      </button>
+
+      <button id="extractBtn" class="button button-secondary">
+        📄 Extract Page Content
+      </button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div id="videoResult" class="video-result">
+      <div class="info-label">Video Generated!</div>
+      <a id="videoLink" href="#" target="_blank" class="video-link">
+        🎬 Open Video
+      </a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

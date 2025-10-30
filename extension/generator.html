@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Frame Docs - Page Content</title>
+
+  <!-- Include marked.js for Markdown rendering -->
+  <script src="node_modules/marked/lib/marked.umd.js"></script>
+  <script src="node_modules/animejs/dist/bundles/anime.umd.js"></script>
+  <script src="node_modules/animejs/lib/anime.min.js"></script> 
+  <script src="node_modules/langchain/dist/index.js"></script> 
+  <script src="node_modules/@langchain/core/dist/index.js"></script>
+<script src="node_modules/minisearch/dist/umd/index.js"></script>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .page-info {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .content-box {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      background: white;
+    }
+
+    /* Summarizer Section */
+    #summarySection {
+      margin-top: 25px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    #summarySection h3 {
+      margin-top: 0;
+    }
+
+    #loadingSpinner {
+      display: none;
+      color: #666;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    #progressBar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    #progressFill {
+      height: 100%;
+      width: 0%;
+      background: #4caf50;
+      transition: width 0.3s;
+    }
+
+    #summaryText {
+      margin-top: 10px;
+    }
+
+    /* Gemini Nano Prompt Section */
+    #promptSection {
+      margin-top: 25px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    #promptStatus {
+      margin-top: 8px;
+      color: #555;
+      font-style: italic;
+    }
+
+    #promptInput {
+      width: 80%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #askBtn {
+      padding: 8px 12px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #promptResponse {
+      margin-top: 10px;
+      background: #f9fafb;
+      padding: 10px;
+      border-radius: 6px;
+      min-height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎬 Frame Docs</h1>
+
+  <div class="page-info">
+    <h2 id="pageTitle">Loading...</h2>
+    <p><strong>URL:</strong> <span id="pageUrl">Loading...</span></p>
+  </div>
+
+  <div class="content-box" style="display: none;">
+    <h3>Page Content:</h3>
+    <pre id="pageContent">Loading content...</pre>
+  </div>
+
+  <!-- Summarizer Section -->
+  <div id="summarySection" style="display: none;">
+    <h3>🧠 AI Summary</h3>
+    <button id="summarizeBtn">Generate Summary</button>
+    <div id="loadingSpinner">⏳ Generating summary, please wait...</div>
+    <div id="progressBar"><div id="progressFill"></div></div>
+    <div id="summaryText"></div>
+  </div>
+
+
+  <script src="generator.js"></script>
+</body>
+</html>
